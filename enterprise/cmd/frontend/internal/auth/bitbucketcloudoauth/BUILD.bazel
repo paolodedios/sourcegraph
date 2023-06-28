@@ -19,6 +19,7 @@ go_library(
         "//enterprise/internal/licensing",
         "//internal/actor",
         "//internal/auth/providers",
+        "//internal/collections",
         "//internal/conf",
         "//internal/conf/conftypes",
         "//internal/database",
