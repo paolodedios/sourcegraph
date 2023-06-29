@@ -1,3 +1,5 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 load("@bazel_skylib//rules:common_settings.bzl", "bool_flag")
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "nogo")
 load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
@@ -333,3 +335,14 @@ exports_files([
 #     name = "tags",
 #     remote_tags = ["""($stamp.STABLE_VERSION // "0.0.0")"""],
 # )
+
+proto_library(
+    name = "root_proto",
+    srcs = ["scip.proto"],
+)
+
+go_proto_library(
+    name = "root_go_proto",
+    importpath = "github.com/sourcegraph/scip/bindings/go/scip/",
+    proto = ":root_proto",
+)
