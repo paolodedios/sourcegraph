@@ -25,7 +25,7 @@ All notable changes to Sourcegraph are documented in this file.
 
 ### Fixed
 
--
+- GitLab internal project visibility is handled more reliably. [#54426](https://github.com/sourcegraph/sourcegraph/pull/54426)
 
 ### Removed
 
