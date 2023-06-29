@@ -70,6 +70,7 @@ func instanceStateDiff(ctx context.Context) (string, error) {
 					for _, ex := range expectedCommits {
 						if ex.Commit == commitAndRoot.Commit && ex.Root == commitAndRoot.Root {
 							found = true
+							break
 						}
 					}
 					if !found {
