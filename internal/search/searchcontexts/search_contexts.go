@@ -55,7 +55,7 @@ func ParseSearchContextSpec(searchContextSpec string) ParsedSearchContextSpec {
 }
 
 func ResolveSearchContextSpec(ctx context.Context, db database.DB, searchContextSpec string) (sc *types.SearchContext, err error) {
-	tr, ctx := trace.New(ctx, "ResolveSearchContextSpec", searchContextSpec)
+	tr, ctx := trace.DeprecatedNew(ctx, "ResolveSearchContextSpec", searchContextSpec)
 	defer func() {
 		tr.LazyPrintf("context: %+v", sc)
 		tr.SetErrorIfNotContext(err)
